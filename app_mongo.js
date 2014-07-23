@@ -1,4 +1,4 @@
-// simple session testing 
+// simple session + mongodb testing 
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -11,7 +11,7 @@ app.use(cookieParser());
 // initialize the session & connect to db 
 app.use(session({
 	secret : 'cicciosgamino',
-	// ,store : new MongoStore({db:'session_app',host:'127.0.0.1',port:27017})
+	,store : new MongoStore({db:'session_app',host:'127.0.0.1',port:27017})
 }));
 // initialize the bodyParser 
 app.use(bodyParser());
