@@ -8,7 +8,7 @@ var app = express();
 
 // initialize the cookieParser - ALWAYS before expressSession
 app.use(cookieParser());
-// initialize the session & connect to db 
+// initialize the session & connect to db for store the session info 
 app.use(expressSession({
 	secret : 'cicciosgamino',
 	store : new MongoStore({db:'session_app',host:'127.0.0.1',port:27017})
