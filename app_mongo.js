@@ -1,20 +1,11 @@
 // simple session + mongodb testing 
 var express = require('express');
-var expressSession = require('express-session');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var MongoStore = require('connect-mongo')(expressSession);
+var middleware = require('./mongo_middleware');
+
 var app = express();
 
-// initialize the cookieParser - ALWAYS before expressSession
-app.use(cookieParser());
-// initialize the session & connect to db for store the session info 
-app.use(expressSession({
-	secret : 'cicciosgamino',
-	store : new MongoStore({db:'session_app',host:'127.0.0.1',port:27017})
-}));
-// initialize the bodyParser 
-app.use(bodyParser());
+// call the middleware 
+middleware(app);
 
 app.get('/', function(req, res){
 	req.session.name = "cicciosgamino";
