@@ -3,7 +3,9 @@ Express - Session - MongoDB
 
 ### Intro 
 Simple app for testing the session managment by connect-mongo module for mongodb 
-connection driver. 
+connection driver, native Node.js session is not for production mode, you can use the 
+basic session only for dev mode, for production mode consider to connect session with mongodb
+driver.  
 
 ### Install Packages 
 
