@@ -6,7 +6,7 @@ Simple app for testing the session managment by connect-mongo module for mongodb
 connection driver, native Node.js session is not for production mode, you can use the 
 basic session only for dev mode, for production mode consider to connect session with mongodb 
 with the rigth drivers, or through redis another famous NoSQL database. Connect the session storage 
-with a db engine permit to store large amout 
+with a db engine permit to store large amout of data for session managment. 
 
 ### Install Packages 
 
