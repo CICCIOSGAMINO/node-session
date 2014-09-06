@@ -35,12 +35,13 @@ Initializing the session middlware is a lot like initializing cookieSession – 
 The session middleware accepts an options object which can be used for defining the options of the middleware. The following are the supported options.
 
 >Option	Description
->-------------------
+>-----------------------------------------------------------------------------------------------------------------
 > + **key**: Name of the cookie. Defaults to connect.sid.
 > + **store**: Instance of a session store. Defaults to MemoryStore. The session store may supports options of its own.
 > + **secret**: Secret for signing session cookie. Required if not passed to cookieParser().
 > + **cookie**: Session cookie settings. Regular cookie defaults apply.
 > + **proxy**: To trust the reverse proxy or not. Defaults to false.
+>-----------------------------------------------------------------------------------------------------------------
 
 Example of session initializing : 
 
@@ -58,7 +59,10 @@ Let’s explore the popular session stores for Express.
 Is one of the most popular session stores for Express, we can use all MongoDB powert to host our backend session. Install 
 the package connect-mongo to start with MongoStore : 
 
-	> npm install connect-mongo --save 			// install with npm 
+	> npm install connect-mongo --save 
+	
+Start a mongodb process on localhost:27017 (default port for mongodb)
+
 	> sudo mongod --fork --logpath /data/db/mongo_session.log --dbpath /data/db/ --port 27017
 
 Load the MongoStore module in the app and set an instance of it as the session store for the session middleware : 
