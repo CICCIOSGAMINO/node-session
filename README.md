@@ -110,7 +110,7 @@ Operations on session variables are is basically working with JavaScript objects
 
 
 ### Deleting session 
-Session store-based sessions do not interpret a missing session object on the request object as the end of a session. If we delete the session object from the request object, it will be recreated from the session store, because the session store decides the state of the session, not JavaScript variables. This also the reason why these sessions are intact even after the app restarts.
+Session store-based can manage the session data with a db connection to make the session data realible. If we delete the session object from the request object, it will be recreated from the session store, because the session store decides the state of the session, not JavaScript variables. This also the reason why these sessions are intact even after the app restarts.
 
 Session store-based sessions has a method called destroy(), which is used for destroying sessions from the session store – the proper way of tearing down a session store-based session.
 
